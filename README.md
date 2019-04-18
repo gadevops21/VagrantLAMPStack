@@ -2,7 +2,6 @@
 
 Vagrant LAMP development stack running on **debian/jessie64**.
 ## Features
----
 ### Installed packages
 * apache2
 * mysql
@@ -22,12 +21,10 @@ Vagrant LAMP development stack running on **debian/jessie64**.
     * php-xdebug
 
 ## Requirements
----
 * VirtualBox
 * Vagrant >= 2.0.0
 
 ## Installation
----
 ```sh
 git clone https://github.com/kczechowski/VagrantLAMPStack.git
 vagrant up
@@ -39,7 +36,6 @@ config.vm.synced_folder "./public", "/var/www/public", disabled: false
 # ...
 ```
 ## Default config
----
 ### VM
 ```ruby
 VM_IP = '10.10.10.10'
@@ -47,7 +43,7 @@ APACHE_HOST_PORT = '80'
 MYSQL_HOST_PORT = '3306'
 ```
 
-### MySql
+### mysql
 ```php
 $dbhost = localhost
 $dbuser = 'root'
