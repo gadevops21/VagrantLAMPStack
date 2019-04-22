@@ -8,7 +8,7 @@ locale-gen  # enable locales in `/etc/locale.gen`
 update-locale LANG=en_US.UTF-8  # setup default VM locale
 sed -i -E 's/^(\s*AcceptEnv\b)/#\1/' /etc/ssh/sshd_config  # avoid SSH overriding it
 
-sudo apt-get install -y software-properties-common
+sudo apt-get install -y software-properties-common curl git wget
 
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
@@ -25,6 +25,10 @@ sudo echo "deb https://packages.sury.org/php/ jessie main" | tee /etc/apt/source
 sudo apt-get update
 sudo apt-get install -y apache2 php7.3 php7.3-fpm php7.3-opcache php7.3-cli php7.3-common php7.3-curl php7.3-gd php7.3-json php-xdebug php7.3-mbstring php7.3-mysql php7.3-sqlite3 php7.3-xml libapache2-mod-php7.3
 # sudo apt-get install -y composer
+
+curl -Ss https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/bin/composer
+
 # Configure Apache
 
 echo "<VirtualHost *:80>
