@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-VAGRANTFILE_API_VERSION = "2"
+VAGRANTFILE_API_VERSION = "2.3"
 
 VM_IP = '10.10.10.10'
 APACHE_HOST_PORT = '80'
